@@ -1,8 +1,8 @@
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
-    console.log(`⭐Assertion Passed: ${actual}  ===  ${expected}`);
+    console.log(`🌟Assertion Passed: ${actual}  ===  ${expected}`);
   } else {
-    console.log(`❗Assertion Failed: ${actual} !== ${expected}`);
+    console.log(`🚩Assertion Failed: ${actual} !== ${expected}`);
   }
 };
 
@@ -13,8 +13,14 @@ const eqArrays = function(arr1, arr2) {
     //iterate over first and second array and compare contents
     for (let i = 0; i < arr1.length; i++) {
 
-      if (arr1[i] === arr2[i]) {
-        matches ++;
+      if (Array.isArray(arr1[i])) {
+        if (eqArrays(arr1[i], arr2[i])) {
+          matches ++;
+        }
+      } else {
+        if (arr1[i] === arr2[i]) {
+          matches ++;
+        }
       }
     }
     //If the number of matching elements is the same as the length of the array. Then they are equal.
@@ -29,8 +35,11 @@ const eqArrays = function(arr1, arr2) {
 
 
 //test code
-assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
-assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), false); // => should PASS
+assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
+assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), false);
+assertEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), true);
+assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), false);
 
-assertEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), true); // => should PASS
-assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), false); // => should PASS
+assertEqual(eqArrays([[2, 3], [4]], [[2, 3], [4]]), true);
+assertEqual(eqArrays([[2, 3], [4]], [[2, 3], [4, 5]]), false);
+assertEqual(eqArrays([[2, 3], [4]], [[2, 3], 4]), false);
