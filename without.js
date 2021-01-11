@@ -1,3 +1,5 @@
+const takeUntil = require("./takeUntil");
+
 const eqArrays = function(arr1, arr2) {
   // Check for array sizes, they must be the same size to be considered equal.
   if (arr1.length === arr2.length) {
@@ -51,14 +53,14 @@ const without = function(source, itemsToRemove) {
   return result;
 };
 
-
+module.exports = takeUntil;
 
 
 //test code
-assertArraysEqual((without([1, 2, 3], [1])), [2, 3]);
-assertArraysEqual((without(["1", "2", "3"], [1, 2, "3"])), ["1", "2"]);
+// assertArraysEqual((without([1, 2, 3], [1])), [2, 3]);
+// assertArraysEqual((without(["1", "2", "3"], [1, 2, "3"])), ["1", "2"]);
 
-//check original
-const originalArr = [3,5,6,7,8];
-assertArraysEqual((without(originalArr, [3,8])), [5,6,7]);
-assertArraysEqual(originalArr, [3,5,6,7,8]);
+// //check original
+// const originalArr = [3,5,6,7,8];
+// assertArraysEqual((without(originalArr, [3,8])), [5,6,7]);
+// assertArraysEqual(originalArr, [3,5,6,7,8]);

@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@eyoa/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "A mini clone of the [Lodash](https://lodash.com) library for learning purposes.",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/eyoa/lotide.git"
   },
-  "author": "",
+  "author": { "name" : "Evelyn Yoa"},
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/eyoa/lotide/issues"

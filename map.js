@@ -37,19 +37,18 @@ const map = function(array, callback) {
   return results;
 };
 
-
-
+module.exports = map;
 
 //test code
-const words = ["ground", "control", "to", "major", "tom"];
+// const words = ["ground", "control", "to", "major", "tom"];
 
-const results1 = map(words, word => word[0]);
+// const results1 = map(words, word => word[0]);
 
-assertArraysEqual(results1, ["g", "c", "t", "m", "t"]);
+// assertArraysEqual(results1, ["g", "c", "t", "m", "t"]);
 
-const results2 = map(words, word => word + "s");
-assertArraysEqual(results2, ["grounds", "controls", "tos", "majors", "toms"]);
+// const results2 = map(words, word => word + "s");
+// assertArraysEqual(results2, ["grounds", "controls", "tos", "majors", "toms"]);
 
-const results3 = map(words, word => word[0].toUpperCase() + word.slice(1));
-assertArraysEqual(results3,  ['Ground', 'Control', 'To', 'Major', 'Tom' ]);
+// const results3 = map(words, word => word[0].toUpperCase() + word.slice(1));
+// assertArraysEqual(results3,  ['Ground', 'Control', 'To', 'Major', 'Tom' ]);
 

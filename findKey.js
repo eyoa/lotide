@@ -19,6 +19,8 @@ const findKey = function(searchObj, callback) {
   return;
 };
 
+module.exports = findKey;
+
 
 
 //test code
