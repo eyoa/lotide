@@ -1,12 +1,35 @@
-const assertArraysEqual = require('../assertArraysEqual');
+const assert = require('chai').assert;
 const middle = require('../middle');
 
-//test code
-assertArraysEqual(middle([1]),[]);
-assertArraysEqual(middle([1, 2]),[]);
+describe("middle",  () => {
+  it(" returns [] if the array only has one element", () => {
+    const array = [1];
+    assert.deepEqual(middle(array), []);
+  });
 
-assertArraysEqual(middle([1, 2, 3]), [2]);
-assertArraysEqual(middle([1, 2, 3, 4, 5]), [3]);
+  it("returns [] if the array only has 2 elements", () => {
+    const array = [1, 2];
+    assert.deepEqual(middle(array), []);
+  });
 
-assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]);
-assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]);
+  it("returns [2] if the array is [1, 2, 3]", () => {
+    const array = [1, 2, 3];
+    assert.deepEqual(middle(array), [2]);
+  });
+
+  it("returns [3] if the array is [1, 2, 3, 4, 5]", () => {
+    const array = [1, 2, 3, 4, 5];
+    assert.deepEqual(middle(array), [3]);
+  });
+
+  it("returns [2, 3] if the array is [1, 2, 3, 4]", () => {
+    const array = [1, 2, 3, 4];
+    assert.deepEqual(middle(array), [2, 3]);
+  });
+
+  it("returns [3, 4] if the array is [1, 2, 3, 4, 5, 6]", () => {
+    const array = [1, 2, 3, 4, 5, 6];
+    assert.deepEqual(middle(array), [3, 4]);
+  });
+
+});
